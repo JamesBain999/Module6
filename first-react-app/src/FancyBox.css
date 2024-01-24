@@ -1,0 +1,16 @@
+.FancyBox {
+    --mask: linear-gradient(#000 0 0) 50%/calc(100% - 37.00px) calc(100% - 37.00px) no-repeat,
+        radial-gradient(farthest-side, #000 98%, #0000) 0 0/2em 2em round;
+    mask:
+        var(--mask);
+    -webkit-mask: var(--mask);
+    padding: 2em;
+    background: linear-gradient(135deg, #1f005c, #5b0060, #870160, #ac255e,
+            #ca485c, #ffb56b) fixed;
+    color: white;
+}
+
+.FancyBox-blue {
+    background: linear-gradient(135deg, #140061, #50006E,
+            #64018C, #6955FF, #4684FF, #1FA7FF) fixed;
+}
