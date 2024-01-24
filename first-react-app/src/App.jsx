@@ -10,6 +10,7 @@ import ComplexComment from "./ComplexComment";
 import { FullName, NamePart} from "./FullName"
 import { FancyBox, Callout} from "./FancyBox"
 import MoviesList from "./MovieList";
+import BigCatsDisplay from "./BigCats";
 
 function ExampleComponent() {
   return (
@@ -56,6 +57,7 @@ function App() {
 
   return (
     <>
+      <BigCatsDisplay />
       <MoviesList />
       <Callout title="Nested React Component"
       message="Simple message with a fancy box applied via composition">
