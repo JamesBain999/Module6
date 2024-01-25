@@ -11,6 +11,10 @@ import { FullName, NamePart} from "./FullName"
 import { FancyBox, Callout} from "./FancyBox"
 import MoviesList from "./MovieList";
 import BigCatsDisplay from "./BigCats";
+import MoodChanger from "./MoodChanger";
+import EmojiChanger from "./Emoji";
+import BirthdayTranslator from "./BirthdayTranslator";
+import LoginForm from "./LoginForm";
 
 function ExampleComponent() {
   return (
@@ -28,40 +32,47 @@ function App() {
     alterEgo: "Peter Parker",
     catchPhrase: "With great power comes great responsibility",
   };
-  const spideyJSX1 = (
-    <div>
-      <h3>{spiderman.name}</h3>
-      <blockquote>{spiderman.catchPhrase}</blockquote>
-      <cite>{spiderman.alterEgo}</cite>
-    </div>
-  );
-  const spideyJSX2 = (
-    <>
-      <h3>{spiderman.name}</h3>
-      <blockquote>{spiderman.catchPhrase}</blockquote>
-      <cite>{spiderman.alterEgo}</cite>
-    </>
-  );
 
-  const person = {first: 'Luke', middle: 'John', last: "James", pets: ['dog ', 'cat ', 'camel ', 'horse ']}
+  // const spideyJSX1 = (
+  //   <div>
+  //     <h3>{spiderman.name}</h3>
+  //     <blockquote>{spiderman.catchPhrase}</blockquote>
+  //     <cite>{spiderman.alterEgo}</cite>
+  //   </div>
+  // );
+  // const spideyJSX2 = (
+  //   <>
+  //     <h3>{spiderman.name}</h3>
+  //     <blockquote>{spiderman.catchPhrase}</blockquote>
+  //     <cite>{spiderman.alterEgo}</cite>
+  //   </>
+  // );
 
-  const comment = {
-    date: new Date(),
-    text: "I hope you enjoy learning React!",
-    author: {
-      // author is also an object
-      name: "Hello Kitty",
-      avatarUrl: "https://placekitten.com/g/64/64",
-    },
-  };
+  // const person = {first: 'Luke', middle: 'John', last: "James", pets: ['dog ', 'cat ', 'camel ', 'horse ']}
+
+  // const comment = {
+  //   date: new Date(),
+  //   text: "I hope you enjoy learning React!",
+  //   author: {
+  //     // author is also an object
+  //     name: "Hello Kitty",
+  //     avatarUrl: "https://placekitten.com/g/64/64",
+  //   },
+  // };
 
   return (
     <>
+      {/* <LoginForm/> */}
+      {/* <BirthdayTranslator/> */}
+      {/* <EmojiChanger/> */}
+      {/* <MoodChanger /> */}
       <BigCatsDisplay />
-      <MoviesList />
-      <Callout title="Nested React Component"
-      message="Simple message with a fancy box applied via composition">
-      <FullName first="Elon" last="Musk" />
+      {/* <MoviesList /> */}
+      {/*<Callout
+        title="Nested React Component"
+        message="Simple message with a fancy box applied via composition"
+      >
+        <FullName first="Elon" last="Musk" />
       </Callout>
       <ComplexComment
         author={comment.author}
@@ -124,7 +135,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       {spideyJSX1}
-      {spideyJSX2}
+      {spideyJSX2} */}
     </>
   );
 }
