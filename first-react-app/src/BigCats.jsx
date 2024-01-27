@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import AddCatForm from "./AddCatForm";
 
 const cats = [
   { id: 1, name: "Cheetah", latinName: "Acinonyx jubatus", image: "" },
@@ -10,46 +11,48 @@ const cats = [
   { id: 7, name: "Tiger", latinName: "Panthera tigris", image: "" },
 ];
 
-function BigCatsDisplay(){
-  const [catList, setCatList] = useState(cats)
+  function BigCatsDisplay() {
+  const [catList, setCatList] = useState(cats);
 
   const handleReverseSort = () => {
     let newCats = [...catList];
     newCats.reverse();
-    setCatList(newCats)
-  }
+    setCatList(newCats);
+  };
 
   const handleAlphabeticalSorting = () => {
     let newCats = [...catList];
-    newCats.sort(function(cat1, cat2){
-      if (cat1.name > cat2.name) {
-        return 1
-        };
-      if (cat1.name < cat2.name) {
-        return -1
-        };
-      return 0;
-    })
-    setCatList(newCats)
-  }
+    newCats.sort((cat1, cat2) => cat1.name.localeCompare(cat2.name));
+    setCatList(newCats);
+  };
 
   const handleFilterPanthera = () => {
-    let newCats = catList.filter((cat) => cat.latinName.startsWith("Panthera"))
-    setCatList(newCats)
-    }
+    let newCats = cats.filter((cat) => cat.latinName.startsWith("Panthera"));
+    setCatList(newCats);
+  };
 
   const handleResetCats = () => {
-    setCatList(cats)
-  } 
+    setCatList(cats);
+  };
+
+  const handleAddCat = (newCat) => {
+    setCatList((prevCats) => [...prevCats, { id: prevCats.length + 1, ...newCat }]);
+  };
+
+  const handleDeleteCat = (catId) => {
+    setCatList((prevCats) => prevCats.filter((cat) => cat.id !== catId));
+  };
 
   return (
     <div className="BigCatsDisplay componentBox">
+      <AddCatForm onAddCat={handleAddCat} />
       <ul>
         {catList.map((cat) => (
           <li key={cat.id}>
             <span>Cats name : {cat.name};</span>
             <span>Cats latin name : {cat.latinName}; </span>
             Image of cat : <img src={cat.image} alt={`${cat.name} Image`} />
+            <button onClick={() => handleDeleteCat(cat.id)}>Delete</button>
           </li>
         ))}
       </ul>
@@ -61,4 +64,4 @@ function BigCatsDisplay(){
   );
 }
 
-export default BigCatsDisplay
+export default BigCatsDisplay;
