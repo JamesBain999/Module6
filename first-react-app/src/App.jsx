@@ -15,6 +15,7 @@ import MoodChanger from "./MoodChanger";
 import EmojiChanger from "./Emoji";
 import BirthdayTranslator from "./BirthdayTranslator";
 import LoginForm from "./LoginForm";
+import ExplodingBomb from "./ExplodingBomb";
 
 function ExampleComponent() {
   return (
@@ -62,6 +63,7 @@ function App() {
 
   return (
     <>
+      <ExplodingBomb />
       {/* <LoginForm/> */}
       {/* <BirthdayTranslator/> */}
       {/* <EmojiChanger/> */}

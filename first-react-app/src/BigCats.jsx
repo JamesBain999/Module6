@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AddCatForm from "./AddCatForm";
+import CatListItem from "./BigCatItem";
 
 const cats = [
   { id: 1, name: "Cheetah", latinName: "Acinonyx jubatus", image: "" },
@@ -27,7 +28,7 @@ const cats = [
   };
 
   const handleFilterPanthera = () => {
-    let newCats = cats.filter((cat) => cat.latinName.startsWith("Panthera"));
+    let newCats = catList.filter((cat) => cat.latinName.startsWith("Panthera"));
     setCatList(newCats);
   };
 
@@ -48,12 +49,10 @@ const cats = [
       <AddCatForm onAddCat={handleAddCat} />
       <ul>
         {catList.map((cat) => (
-          <li key={cat.id}>
-            <span>Cats name : {cat.name};</span>
-            <span>Cats latin name : {cat.latinName}; </span>
-            Image of cat : <img src={cat.image} alt={`${cat.name} Image`} />
+          <div key={cat.id}>
+            {CatListItem(cat)}
             <button onClick={() => handleDeleteCat(cat.id)}>Delete</button>
-          </li>
+          </div>
         ))}
       </ul>
       <button onClick={handleReverseSort}>Reverse</button>
